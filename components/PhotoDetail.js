@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, View, Image, Linking} from 'react-native';
-import Card from './Card';
+import {Text, View, Linking} from 'react-native';
 import CardSection from './CardSection';
-import Button from './Button';
+import { Button, Card } from 'react-native-paper';
+import { Avatar } from 'react-native-paper';
 
 const PhotoDetail = ({title, imageUrl}) => {
   const {
@@ -10,32 +10,46 @@ const PhotoDetail = ({title, imageUrl}) => {
     headerContentStyle,
     thumbnailContainerStyle,
     headerTextStyle,
-    imageStyle,
+    card,
   } = styles;
 
   return (
-    <Card>
+    <Card style={card}>      
       <CardSection>
         <View style={thumbnailContainerStyle}>
-          <Image style={thumbnailStyle} source={{uri: imageUrl}} />
+          <Avatar.Image
+            style={thumbnailStyle}
+            source={{uri: imageUrl}}
+            size={50}
+          />
         </View>
         <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
         </View>
       </CardSection>
-
-      <CardSection>
-        <Image style={imageStyle} source={{uri: imageUrl}} />
-      </CardSection>
-
-      <CardSection>
-        <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
-      </CardSection>
+      
+      <Card.Cover source={{uri: imageUrl}}/>
+      <Card.Actions>
+        <Button
+            style={{flex:1}}
+            mode="contained"
+            color="rgb(0, 122, 255)"
+            onPress={() => Linking.openURL(imageUrl)}>
+            See {title}!
+          </Button>
+      </Card.Actions> 
     </Card>
+
   );
 };
 
 const styles = {
+  card: {
+    marginTop: 10
+  },
+  buttonContentStyle: {
+    flex: 1
+  },
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -57,7 +71,7 @@ const styles = {
     height: 300,
     flex: 1,
     width: null,
-  },
+  }
 };
 
 export default PhotoDetail;
