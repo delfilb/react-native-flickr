@@ -1,4 +1,4 @@
-# react-native-flickr
+#TP Grupo 4  - Ailin Asis, Facundo Muñoz - Delfina Lizarralde Bressan
 
 run: 
 
