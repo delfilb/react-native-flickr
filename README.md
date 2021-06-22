@@ -1,9 +1,9 @@
-#TP Grupo 4  - Ailin Asis, Facundo Muñoz - Delfina Lizarralde Bressan
+# TP DSM - Grupo 4  |  Ailin Asis - Facundo Muñoz - Delfina Lizarralde Bressan
 
-run: 
+Run: 
 
-1. npm i
+1.  npm i
 
-2. expo install react-native-safe-area-context
+2.  expo install react-native-safe-area-context
 
-3. expo start
+3.  expo start
