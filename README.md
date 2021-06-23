@@ -11,7 +11,7 @@ Run:
 
 3. expo start
 
-4.  scan from Expo Go app  OR  click on "Run in web browser"
+4. scan from Expo Go app  OR  click on "Run in web browser"
 ```
 
 *Desarrollo de Software Multipantalla - 
